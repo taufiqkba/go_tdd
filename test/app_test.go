@@ -20,7 +20,7 @@ var (
 )
 
 func TestMain(m *testing.M) {
-	db = config.InitDatabase("host=localhost user=postgres password=postgres port=5432 dbname=workshop_tdd_test")
+	db = config.InitDatabase("root:root@tcp(127.0.0.1:3306)/go_tdd_test?charset=utf8mb4&parseTime=True&loc=Local")
 	app = routes.InitRoutes(db)
 
 	m.Run()

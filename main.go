@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	db := config.InitDatabase("host=localhost user=postgres password=postgres dbname=workshop_tdd")
+	db := config.InitDatabase("root:root@tcp(127.0.0.1:3306)/go_tdd?charset=utf8mb4&parseTime=True&loc=Local")
 	app := routes.InitRoutes(db)
 
 	app.Run(":8000")
